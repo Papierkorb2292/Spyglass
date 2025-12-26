@@ -423,6 +423,11 @@ connection.onRequest('spyglassmc/showCacheRoot', async (): Promise<void> => {
 })
 
 connection.languages.semanticTokens.on(async ({ textDocument: { uri } }) => {
+	console.log(uri)
+	connection.workspace.getConfiguration({
+		scopeUri: uri,
+		section: 'spyglassmc.env.feature.semanticHighlighting',
+	}).then(configuration => console.log(configuration), err => console.log(err))
 	const docAndNode = await service.project.ensureClientManagedChecked(uri)
 	if (!docAndNode || !service.project.config.env.feature.semanticColoring) {
 		return { data: [] }

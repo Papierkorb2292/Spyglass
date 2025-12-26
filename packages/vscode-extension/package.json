@@ -249,6 +249,10 @@
           ],
           "markdownDescription": "%spyglassmc.trace.server%",
           "default": "off"
+        },
+        "spyglassmc.env.feature.semanticHighlighting": {
+          "type": "boolean",
+          "default": true
         }
       }
     },
@@ -257,11 +261,13 @@
         "editor.semanticHighlighting.enabled": true
       },
       "[mcdoc]": {
-        "editor.semanticHighlighting.enabled": true
+        "editor.semanticHighlighting.enabled": true,
+        "spyglassmc.env.feature.semanticHighlighting": true
       },
       "[mcfunction]": {
         "editor.semanticHighlighting.enabled": true,
-        "editor.suggest.insertMode": "replace"
+        "editor.suggest.insertMode": "replace",
+        "spyglassmc.env.feature.semanticHighlighting": false
       },
       "editor.semanticTokenColorCustomizations": {
         "rules": {
